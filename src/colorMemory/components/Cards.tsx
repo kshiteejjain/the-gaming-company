@@ -1,7 +1,21 @@
 import { useEffect, useState } from 'react';
 import '../styles/Cards.css';
 
-function Card({hexCode, name, handleClick}) {
+type Color = {
+    hex: string;
+    name: string;
+    isClicked: boolean;
+  };
+
+  type CardsProps = {
+    level: number;
+    gameState: string;
+    setGameState: React.Dispatch<React.SetStateAction<string>>;
+    setScore: React.Dispatch<React.SetStateAction<number>>;
+    score: number;
+  };
+
+  function Card({ hexCode, name, handleClick }: { hexCode: string; name: string; handleClick: (e: React.MouseEvent<HTMLDivElement>) => void }) {
     return (
         <div className="card" data-color={hexCode} onClick={handleClick}>
             <div className="color" style={{backgroundColor : hexCode}}></div>
@@ -10,9 +24,9 @@ function Card({hexCode, name, handleClick}) {
     )
 }
 
-const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+const randomBetween = (min: number, max: number) => min + Math.floor(Math.random() * (max - min + 1));
 
-const shuffleArray = (arr) => {
+const shuffleArray = (arr: Color[]) => {
     let j, x, i;
     for (i = arr.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -23,12 +37,12 @@ const shuffleArray = (arr) => {
     return arr;
 }
 
-export default function Cards({level, gameState, setGameState, setScore, score}) {
-    const [colorsArray, setColorsArray] = useState([]);
+export default function Cards({level, gameState, setGameState, setScore, score}: CardsProps) {
+    const [colorsArray, setColorsArray] = useState<Color[]>([]);
 
-    const generateColorsArray = async (level) => {
-        let newColors = [];
-        let previousRGBs = [];
+    const generateColorsArray = async (level: number): Promise<void> => {
+        let newColors: Color[] = [];
+        let previousRGBs: string[] = [];
         for (let i = 0; i < level + 3; i++) {
             let r = randomBetween(0, 254);
             let g = randomBetween(0, 254);
@@ -48,7 +62,7 @@ export default function Cards({level, gameState, setGameState, setScore, score})
         setColorsArray(newColors);
     }
 
-    const handleCardClick = (e) => {
+    const handleCardClick = (e: any) => {
         const hexCode = e.currentTarget.dataset.color;
         const array = [...colorsArray];
         array.map((color) => {

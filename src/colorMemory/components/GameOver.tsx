@@ -1,6 +1,13 @@
 import '../styles/GameOver.css';
 
-export default function GameOver({highestScore, overlayStyle, modalStyle, resetGame}) {
+type GameOverProps = {
+    highestScore: number;
+    overlayStyle: React.CSSProperties;
+    modalStyle: React.CSSProperties;
+    resetGame: () => void;
+  };
+
+export default function GameOver({highestScore, overlayStyle, modalStyle, resetGame}: GameOverProps) {
     return (
         <div id="overlay" style={overlayStyle}>
             <div id="game-over-modal" style={modalStyle}>

@@ -1,7 +1,12 @@
 import '../styles/Stats.css';
 
+type StatsProps = {
+    level: number;
+    score: number;
+    highestScore: number;
+  };
 
-export default function Stats({level, score, highestScore}) {
+export default function Stats({level, score, highestScore}:StatsProps) {
     
     return (
         <div id="stats">

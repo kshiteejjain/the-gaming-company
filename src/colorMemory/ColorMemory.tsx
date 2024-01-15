@@ -6,15 +6,14 @@ import { useEffect } from 'react';
 import GameOver from './components/GameOver';
 import Header from '../components/header/Header';
 
-let overlayStyle = {
+let overlayStyle: React.CSSProperties = {
   visibility: 'hidden',
   opacity: '0%'
-}
+};
 
-let modalStyle = {
+let modalStyle: React.CSSProperties = {
   transform: 'translate(0%, 0%)'
-}
-
+};
 
 function App() {
   const [level, setLevel] = useState(1);
@@ -56,11 +55,11 @@ function App() {
     (score > highestScore) && setHighestScore(score);
   }, [score, highestScore])
 
-  const resetGame = () => {
+  const resetGame = (): void => {
     setGameState('new game');
     setScore(0);
     setLevel(1);
-  }
+  };
 
   return (
     <>
