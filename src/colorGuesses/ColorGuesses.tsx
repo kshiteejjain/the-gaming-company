@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Header from "../components/header/Header";
+
 import "./ColorGuesses.css";
 
 type ColorGuessesProps = {};
@@ -56,6 +58,7 @@ const ColorGuesses: React.FC<ColorGuessesProps> = () => {
 
   return (
     <div className="App">
+      <Header />
       <h1>Guess the color</h1>
       <div className="color-cont" style={{ backgroundColor: guessColor }}></div>
       <div className="button-group-cont">
