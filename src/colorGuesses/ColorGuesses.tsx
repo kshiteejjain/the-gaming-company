@@ -57,25 +57,27 @@ const ColorGuesses: React.FC<ColorGuessesProps> = () => {
   };
 
   return (
-    <div className="App">
+    <>
       <Header />
-      <h1>Guess the color</h1>
-      <div className="color-cont" style={{ backgroundColor: guessColor }}></div>
-      <div className="button-group-cont">
-        {randomColors.map((color, idx) => (
-          <button
-            value={color}
-            key={idx}
-            onClick={handleColorGuess}
-          >
-            {color}
-          </button>
-        ))}
+      <div className="App">
+        <h1>Guess the color</h1>
+        <div className="color-cont" style={{ backgroundColor: guessColor }}></div>
+        <div className="button-group-cont">
+          {randomColors.map((color, idx) => (
+            <button
+              value={color}
+              key={idx}
+              onClick={handleColorGuess}
+            >
+              {color}
+            </button>
+          ))}
+        </div>
+        <h4 className="lbl-guess-checker">
+          {isCorrect === "yes" ? "Correct! ✅" : isCorrect === "no" ? "Bad guess ❌" : null}
+        </h4>
       </div>
-      <h4 className="lbl-guess-checker">
-        {isCorrect === "yes" ? "Correct! ✅" : isCorrect === "no" ? "Bad guess ❌" : null}
-      </h4>
-    </div>
+    </>
   );
 };
 
