@@ -1,9 +1,10 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import ColorMemory from './colorMemory/ColorMemory';
-import Tenzies from './tenzies/Tenzies';
-import ColorGuesses from './colorGuesses/ColorGuesses';
-import TicTacToe from './ticTacToe/TicTacToe';
+import ColorMemory from './gamesDir/colorMemory/ColorMemory';
+import Tenzies from './gamesDir/tenzies/Tenzies';
+import ColorGuesses from './gamesDir/colorGuesses/ColorGuesses';
+import TicTacToe from './gamesDir/ticTacToe/TicTacToe';
+import BlackJackCards from './gamesDir/blackJackCards/BlackJackCards';
 
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/Tenzies" element={<Tenzies />} />
           <Route path="/ColorGuesses" element={<ColorGuesses />} />
           <Route path="/TicTacToe" element={<TicTacToe />} />
+          <Route path="/BlackJackCards" element={<BlackJackCards />} />
         </Routes>
       </Router>
     </React.StrictMode>

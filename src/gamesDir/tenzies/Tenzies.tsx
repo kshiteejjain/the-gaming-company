@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 import { Die } from "./components";
-import Header from "../components/header/Header";
+import Header from "../../components/header/Header";
 
 import './css/style.css';
 

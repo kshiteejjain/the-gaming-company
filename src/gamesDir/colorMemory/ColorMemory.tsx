@@ -4,7 +4,7 @@ import Stats from './components/Stats'
 import Cards from './components/Cards';
 import { useEffect } from 'react';
 import GameOver from './components/GameOver';
-import Header from '../components/header/Header';
+import Header from '../../components/header/Header';
 
 let overlayStyle: React.CSSProperties = {
   visibility: 'hidden',
