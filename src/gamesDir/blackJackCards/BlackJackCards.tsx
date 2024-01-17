@@ -5,6 +5,7 @@ import Hand from './components/Hand';
 import jsonData from './deck.json';
 
 import './BlackJackCards.css';
+import Header from '../../components/header/Header';
 
 const BlackJackCards: React.FC = () => {
   enum GameState {
@@ -262,7 +263,7 @@ const BlackJackCards: React.FC = () => {
   }
 
   return (
-    <div className='cardWrapper'>
+    <><Header /><div className='cardWrapper'>
       <Status message={message} balance={balance} />
       <Controls
         balance={balance}
@@ -271,11 +272,10 @@ const BlackJackCards: React.FC = () => {
         betEvent={placeBet}
         hitEvent={hit}
         standEvent={stand}
-        resetEvent={resetGame}
-      />
+        resetEvent={resetGame} />
       <Hand title={`Dealer's Hand (${dealerScore})`} cards={dealerCards} />
       <Hand title={`Your Hand (${userScore})`} cards={userCards} />
-    </div>
+    </div></>
   );
 }
 

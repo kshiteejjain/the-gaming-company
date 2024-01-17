@@ -19,6 +19,7 @@ const Header = () => {
             <Button onClick={()=> navigate('/ColorGuesses')} title='Color Guesses'></Button>
             <Button onClick={()=> navigate('/TicTacToe')} title='Tic Tac Toe'></Button>
             <Button onClick={()=> navigate('/BlackJackCards')} title='Black Jack Cards'></Button>
+            <Button onClick={()=> navigate('/ArticulateWords')} title='Articulate Words'></Button>
           </nav>
         </div>
         </div>
